@@ -20,6 +20,6 @@ function openCanvas2() {
 }
 
 function closeAllCanvas() {
-    document.getElementById("canvas1").classList.remove("active");
+    document.getElementById("letterCanvas").classList.remove("active");
     document.getElementById("canvas2").classList.remove("active");
 }
