@@ -29,7 +29,11 @@ h1 {
 }
 
 h2{
+    font-size: medium;
     font-family: 'Open Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    color: rgb(80, 71, 71);
 }
 
 @keyframes glow {
@@ -126,7 +130,7 @@ h2{
 
 /* Nội dung canvas */
 .canvas-content {
-    background: white;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -135,14 +139,23 @@ h2{
     max-height: 80vh; /* Giới hạn chiều cao tối đa */
     overflow-y: auto; 
     text-align:justify;
-    display: flex;
     flex-direction: column;
     align-items: center;  /* Căn giữa theo chiều ngang */
     justify-content: center;
-    
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Nút đóng canvas */
 .close-btn {
     position: absolute;
@@ -179,6 +192,7 @@ p{
     opacity: 1;
 }
 .button-17 {
+    margin-top: 20px;
     align-items: center;
     appearance: none;
     background-color: #fff;
@@ -226,7 +240,17 @@ p{
     outline: none;
     border: 2px solid #4285f4;
   }
-  
+  .button-17:hover {
+    background: #ff4da6;
+    color: white;
+}
+
+  .endd{
+        display: flex;
+        justify-content: center;  /* Căn giữa button theo chiều ngang */
+        width: 100%;  /* Đảm bảo div chiếm toàn bộ chiều rộng */
+        margin-top: 20px;  /* Khoảng cách giữa button và nội dung trên */
+  }
   .button-17:not(:disabled) {
     box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
   }
