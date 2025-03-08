@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(17, 17, 17);
+    font-family: 'Caveat Brush', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+/* Background tiêu đề */
+.BG {
+    width: 100%;
+}
+
+/* Tiêu đề phát sáng */
+h1 {
+    padding-top: 10px;
+    color: rgb(245, 48, 48);
+    font-size: 5.5vw; /* Điều chỉnh theo màn hình */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+h2{
+    font-family: 'Open Sans', sans-serif;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fba7a7, 0 0 10px #e27878, 0 0 20px #e60073;
+    }
+    to {
+        text-shadow: 0 0 10px #fba7a7, 0 0 20px #e27878, 0 0 30px #ff4da6;
+    }
+}
+
+/* Container chứa tất cả nội dung */
+.container {
+    padding-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Khoảng cách giữa ảnh và text */
+    flex-wrap: wrap; /* Đảm bảo không bị tràn trên mobile */
+    max-width: 90vw;
+}
+
+/* Văn bản Click vào đây */
+.click-text {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+h2{
+    text-align: center; 
+}
+/* Chứa text và GIF */
+.text-gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    gap: 5px; /* Khoảng cách giữa text và GIF */
+}
+
+/* GIF mũi tên */
+.gif-container img {
+    width: 30px; /* Điều chỉnh kích thước GIF */
+    height: auto;
+}
+
+/* Hộp logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Giữ kích thước hợp lý */
+    height: 300px;
+    cursor: pointer;
+}
+
+/* Hình ảnh Logo */
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng zoom in - zoom out khi hover */
+.logo img {
+    animation: zoom 0.6s infinite alternate;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Canvas overlay */
+.canvas-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* Nội dung canvas */
+.canvas-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    position: relative;
+    max-height: 70vh; /* Giới hạn chiều cao tối đa */
+    overflow-y: auto; 
+    text-align:justify;
+}
+
+
+/* Nút đóng canvas */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+p{
+    font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+/* Hiển thị canvas khi mở */
+.canvas-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+.gif-desktop {
+    display: block; /* Hiện GIF trên laptop */
+    width: 100px; /* Điều chỉnh kích thước */
+}
+
+.gif-mobile {
+    display: none; /* Ẩn GIF mobile */
+    width: 150px;
+}
+/* Responsive cho màn hình nhỏ */
+/* CSS */
+.canvas-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.button-56 {
+    align-items: center;
+    justify-content: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-56:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+  
+  .button-56:hover:after {
+    transform: translate(0, 0);
+  }
+  
+  .button-56:active {
+    background-color: #ffdeda;
+    outline: 0;
+  }
+  
+  .button-56:hover {
+    outline: 0;
+  }
+  
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 200px; /* Giảm kích thước logo */
+        height: 200px;
+    }
+
+    .text-gif {
+        font-size: 20px;
+    }
+
+    .gif-container img {
+        width: 40px;
+    }
+
+    .gif-desktop {
+        display: none; /* Ẩn GIF laptop */
+    }
+
+    .gif-mobile {
+        display: block; /* Hiện GIF mobile */
+    }
+    .button-56 {
+        padding: 0 40px;
+      }
+}
+
